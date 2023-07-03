@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{%extends 'OPD/Home.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Data</title>
+</head>
+<body>
+{%block navblock%}
+<center><h1>PATIENT DATA DETAILS</h1></center>
+{% if Data %}
+<table border="1" margin="auto" align="center">
+  <tr>
+    <th>name</th>
+    <th>email</th>
+    <th>dob</th>
+    <th>gender</th>
+    <th>addr</th>
+    <th>ph_no</th>
+  </tr>
+  {% for OPD in Data %}
+  <tr>
+    <td>{{OPD.name}}</td>
+    <td>{{OPD.email}}</td>
+    <td>{{OPD.dob}}</td>
+    <td>{{OPD.gender}}</td>
+    <td>{{OPD.addr}}</td>
+    <td>{{OPD.ph_no}}</td>
+  </tr>
+  {%endfor %}
+</table>
+{%else%}
+<h2>NO Admission DATA</h2>
+{%endif%}
+
+{%endblock%}
+</body>
+</html>
